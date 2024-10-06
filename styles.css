@@ -1,0 +1,589 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ebeff3; /* Light background */
+    color: #333;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#sea:hover{
+    transform: scale(1.4);
+    background-image: url(sea.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#disruption:hover{
+    transform: scale(1.4);
+    background-image: url(pagriculture.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#ice:hover{
+    transform: scale(1.4);
+    background-image: url(ice.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#refurgee:hover{
+    transform: scale(1.4);
+    background-image: url(refugees.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#weather:hover{
+    transform: scale(1.4);
+    background-image: url(aweather.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/* Content Section */
+.content {
+    padding: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+    /* background-color: #ffffff; */
+    border-radius: 15px;
+    /* box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);  */
+    text-align: center;
+    z-index: 1;
+    margin-top: 100px;
+    color: white;
+}
+
+/* Title Styling */
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Title Color Variations */
+h1.blue { color: #3498db; }
+h1.red { color: #ff6347; }
+h1.orange { color: #e67e22; }
+h1.cyan { color: #00bcd4; }
+
+/* Navigation Buttons */
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.button {
+    text-decoration: none;
+    color: black;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Button Colors */
+.button.blue { background-color: #3498db; }
+.button.red { background-color: #ff6347; }
+.button.orange { background-color: #e67e22; }
+.button.cyan { background-color: #00bcd4; }
+
+/* Button Hover Effect */
+.button:hover {
+    transform: translateY(-3px); /* Lift effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.button.blue:hover { background-color: #2980b9; }
+.button.red:hover { background-color: #e5533c; }
+.button.orange:hover { background-color: #d35400; }
+.button.cyan:hover { background-color: #0288d1; }
+
+/* Section Styling */
+h2 {
+    font-size: 2.5rem;
+    color: #555;
+    margin-top: 50px;
+}
+
+p, ul {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #666;
+    margin-top: 20px;
+}
+
+/* Chart Container */
+.chart-container {
+    position: relative;
+    margin: 40px auto;
+    height: 400px;
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Weather and Climate Data Styling */
+#weatherData, #climateData {
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+/* Background Video Styling */
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+#backgroundVideo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+/* Squares Container */
+.squares-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 50px;
+    z-index: 1;
+}
+
+/* Individual Square Styling */
+.square {
+    width: 150px;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 2px solid #00bcd4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.square:hover {
+    background-color: #00bcd4;
+    color: #fff;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .content {
+        padding: 20px;
+        max-width: 100%;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .nav-buttons {
+        flex-direction: column;
+    }
+
+    .chart-container {
+        height: 300px;
+        width: 100%;
+    }
+
+    .square {
+        width: 120px;
+        height: 120px;
+    }
+}
+/* Emergency Communication Tool Section Styling */
+#emergency-tool {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+#emergency-tool h2 {
+    color: #e74c3c; /* Red color to emphasize emergency */
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#emergency-tool p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+form#emergencyForm {
+    display: flex;
+    flex-direction: column;
+}
+
+form#emergencyForm label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+form#emergencyForm input, form#emergencyForm textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    width: 100%;
+}
+
+form#emergencyForm button {
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form#emergencyForm button:hover {
+    background-color: #c0392b;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    #emergency-tool h2 {
+        font-size: 1.8rem;
+    }
+
+    form#emergencyForm input, form#emergencyForm textarea {
+        font-size: 0.9rem;
+    }
+
+    form#emergencyForm button {
+        font-size: 1rem;
+    }
+}
+/* Solution Tool Section */
+#weather-solutions {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#weather-solutions h2 {
+    color: #00bcd4;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.solutions-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.solution-btn {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.solution-btn:hover {
+    background-color: #2980b9;
+}
+
+.solution-details {
+    margin-top: 30px;
+}
+
+#solutionTitle {
+    color: #e67e22;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+#solutionDescription {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .solutions-list {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .solution-btn {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+
+    #solutionTitle {
+        font-size: 1.5rem;
+    }
+
+    #solutionDescription {
+        font-size: 1rem;
+    }
+}
+/* Agriculture Solutions Tool Section */
+#agriculture-solutions {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#agriculture-solutions h2 {
+    color: #2ecc71;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.solutions-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.solution-btn {
+    background-color: #27ae60;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.solution-btn:hover {
+    background-color: #229954;
+}
+
+.solution-details {
+    margin-top: 30px;
+}
+
+#agricultureSolutionTitle {
+    color: #e67e22;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+#agricultureSolutionDescription {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .solutions-list {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .solution-btn {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+
+    #agricultureSolutionTitle {
+        font-size: 1.5rem;
+    }
+
+    #agricultureSolutionDescription {
+        font-size: 1rem;
+    }
+}
+/* Ice Caps Solutions Tool Section */
+#icecaps-solutions {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#icecaps-solutions h2 {
+    color: #3498db;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.solutions-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.solution-btn {
+    background-color: #2980b9;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.solution-btn:hover {
+    background-color: #1f6399;
+}
+
+.solution-details {
+    margin-top: 30px;
+}
+
+#iceCapsSolutionTitle {
+    color: #e67e22;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+#iceCapsSolutionDescription {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .solutions-list {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .solution-btn {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+
+    #iceCapsSolutionTitle {
+        font-size: 1.5rem;
+    }
+
+    #iceCapsSolutionDescription {
+        font-size: 1rem;
+    }
+}
+/* Climate Refugee Solutions Tool Section */
+#climate-refugee-solutions {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#climate-refugee-solutions h2 {
+    color: #e74c3c;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.solutions-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.solution-btn {
+    background-color: #c0392b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.solution-btn:hover {
+    background-color: #a93226;
+}
+
+.solution-details {
+    margin-top: 30px;
+}
+
+#refugeeSolutionTitle {
+    color: #e67e22;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+#refugeeSolutionDescription {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .solutions-list {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .solution-btn {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+
+    #refugeeSolutionTitle {
+        font-size: 1.5rem;
+    }
+
+    #refugeeSolutionDescription {
+        font-size: 1rem;
+    }
+}

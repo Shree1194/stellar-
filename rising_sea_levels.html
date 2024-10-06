@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rising Sea Levels and Coastal Impact</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js for graphs -->
+</head>
+<body>
+    <!-- Main Content Section -->
+    <div class="content">
+        <h1>Rising Sea Levels and Coastal Impact</h1>
+
+        <!-- Modern Buttons Below Title -->
+        <div class="nav-buttons">
+            <a href="#problem" class="button">Problem</a>
+            <a href="#real-life" class="button">Real-Life Incidents</a>
+            <a href="#graphs" class="button">Graphs & Charts</a>
+            <a href="#solution" class="button">Solutions</a>
+        </div>
+
+        <!-- Problem Section -->
+        <section id="problem">
+            <h2>Problem</h2>
+            <p>Rising sea levels are primarily caused by **global warming**, leading to the melting of polar ice caps and glaciers, and the thermal expansion of seawater as it warms. Sea level rise increases the risk of coastal flooding, erosion, and the displacement of communities. Coastal areas around the world are vulnerable, with millions of people potentially being forced to move from their homes.</p>
+            <p>According to NASA, sea levels have risen by approximately 20 cm over the last century, and this rate is accelerating. Experts predict a further rise of up to 1 meter by 2100 if no significant measures are taken.</p>
+        </section>
+
+        <!-- Real-Life Incidents Section -->
+        <section id="real-life">
+            <h2>Real-Life Incidents</h2>
+            <p>Sea level rise is already affecting communities around the world:</p>
+            <ul>
+                <li><strong>Miami, Florida:</strong> Miami regularly experiences **"sunny day flooding,"** where high tides cause streets to flood even without rain. The city is investing heavily in infrastructure to cope with rising waters.</li>
+                <li><strong>Venice, Italy:</strong> Venice is known for its flooding, but the frequency of **"acqua alta"** (high water) events is increasing as sea levels rise. In 2019, Venice faced some of its worst flooding in over 50 years.</li>
+                <li><strong>The Maldives:</strong> This island nation in the Indian Ocean is one of the most vulnerable countries to sea level rise. It could become uninhabitable by 2100 if global temperatures continue to rise at current rates.</li>
+            </ul>
+        </section>
+
+        <!-- Graphs & Charts Section -->
+        <section id="graphs">
+            <h2>Graphs & Charts</h2>
+            <div class="chart-container">
+                <canvas id="seaLevelChart"></canvas>
+            </div>
+        </section>
+
+        <!-- Solution Section -->
+        <section id="solution">
+            <h2>Solutions</h2>
+            <p>Several approaches can help mitigate the effects of sea level rise:</p>
+            <ul>
+                <li><strong>Reducing Greenhouse Gas Emissions:</strong> One of the most effective solutions is to reduce carbon emissions through renewable energy, energy efficiency, and sustainable practices.</li>
+                <li><strong>Building Coastal Defenses:</strong> Countries can invest in **sea walls, levees**, and other infrastructure to protect vulnerable coastal areas from flooding and erosion.</li>
+                <li><strong>Restoring Natural Buffers:</strong> Natural coastal ecosystems such as **mangroves, coral reefs, and wetlands** can act as buffers against storm surges and flooding, helping to protect inland areas.</li>
+                <li><strong>Relocation of Communities:</strong> In extreme cases, relocating vulnerable communities from low-lying areas to safer regions may be necessary.</li>
+            </ul>
+        </section>
+    </div>
+
+    <!-- Chart.js Script to Render Sea Level Rise Graph -->
+    <script>
+        const ctx = document.getElementById('seaLevelChart').getContext('2d');
+        const seaLevelChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['1993', '1996', '1999', '2002', '2005', '2008', '2011', '2014', '2017', '2020'],
+                datasets: [{
+                    label: 'Global Sea Level (mm)',
+                    data: [40, 45, 50, 60, 65, 70, 75, 85, 90, 95], // Example data for sea level rise
+                    backgroundColor: 'rgba(0, 188, 212, 0.2)',
+                    borderColor: 'rgba(0, 188, 212, 1)',
+                    borderWidth: 1,
+                    fill: true,
+                    
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+<!-- Emergency Communication Tool Section -->
+<section id="emergency-tool">
+    <h2>Emergency Communication Tool</h2>
+    <p>If you're experiencing an emergency due to coastal impact, such as flooding or storm surges, please fill out the form below. Your message will be sent to local authorities for help.</p>
+
+    <form id="emergencyForm">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+        <label for="location">Your Location:</label>
+        <input type="text" id="location" name="location" placeholder="Enter your location (e.g., city, state)" required>
+
+        <label for="description">Emergency Description:</label>
+        <textarea id="description" name="description" rows="4" placeholder="Describe the emergency (e.g., flooding, storm surge)" required></textarea>
+
+        <label for="contact">Contact Information:</label>
+        <input type="text" id="contact" name="contact" placeholder="Enter your phone number or email" required>
+
+        <button type="submit">Submit Emergency Report</button>
+    </form>
+</section>

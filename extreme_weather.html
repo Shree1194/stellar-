@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extreme Weather Events: Causes, Impacts, and Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js for graphs -->
+</head>
+<body>
+    <!-- Main Content Section -->
+    <div class="content">
+        <h1>Extreme Weather Events: Causes, Impacts, and Solutions</h1>
+
+        <!-- Navigation Buttons Below Title -->
+        <div class="nav-buttons">
+            <a href="#problem" class="button">Problem</a>
+            <a href="#real-life" class="button">Real-Life Incidents</a>
+            <a href="#graphs" class="button">Graphs & Charts</a>
+            <a href="#solution" class="button">Solutions</a>
+            <a href="#api" class="button">Live Weather Data</a>
+        </div>
+
+        <!-- Problem Section -->
+        <section id="problem">
+            <h2>Problem: Understanding Extreme Weather Events</h2>
+            <p>Extreme weather events include **heatwaves**, **floods**, **droughts**, **hurricanes**, **tornadoes**, and **wildfires**. These events are becoming more frequent and severe due to **climate change**. The increase in global temperatures is disrupting weather patterns, causing more intense and unpredictable weather events.</p>
+            <ul>
+                <li><strong>Heatwaves:</strong> Prolonged periods of excessive heat, often accompanied by high humidity, can lead to heat-related illnesses and deaths.</li>
+                <li><strong>Hurricanes and Typhoons:</strong> These intense tropical storms cause significant wind damage, flooding, and storm surges.</li>
+                <li><strong>Droughts:</strong> Droughts result from a prolonged lack of rainfall, impacting agriculture and water resources.</li>
+                <li><strong>Floods:</strong> Heavy rainfall, storm surges, and melting snow can overwhelm rivers and drainage systems, leading to devastating floods.</li>
+                <li><strong>Wildfires:</strong> Intense heat, drought, and dry vegetation can spark wildfires, which spread quickly and cause significant destruction.</li>
+            </ul>
+        </section>
+
+        <!-- Real-Life Incidents Section -->
+        <section id="real-life">
+            <h2>Real-Life Incidents: Cities and Regions Impacted</h2>
+            <p>Extreme weather is already impacting cities around the world. Here are a few major examples:</p>
+            <ul>
+                <li><strong>California, USA:</strong> California has experienced record-breaking wildfires in recent years. The **Camp Fire** in 2018 became the deadliest and most destructive wildfire in the state's history.</li>
+                <li><strong>Houston, Texas:</strong> In 2017, **Hurricane Harvey** made landfall in Texas, causing catastrophic flooding and displacing thousands of residents.</li>
+                <li><strong>Western Europe:</strong> In 2021, countries like Germany and Belgium faced **severe flooding** due to heavy rains, causing widespread destruction and deaths.</li>
+                <li><strong>Australia:</strong> The **2019-2020 bushfires** in Australia, also known as "Black Summer," burned 18.6 million hectares and killed or displaced nearly 3 billion animals.</li>
+                <li><strong>India and Bangladesh:</strong> **Cyclone Amphan** in 2020 was one of the most powerful storms to hit the region, displacing millions and causing widespread flooding.</li>
+            </ul>
+        </section>
+
+        <!-- Graphs & Charts Section -->
+        <section id="graphs">
+            <h2>Graphs & Charts: Extreme Weather Events Over Time</h2>
+            <p>The chart below shows the increase in extreme weather events over the past few decades, reflecting the growing severity and frequency of these events.</p>
+            <div class="chart-container">
+                <canvas id="weatherChart"></canvas>
+            </div>
+        </section>
+
+        <!-- Solution Section -->
+        <section id="solution">
+            <h2>Solutions: Addressing Extreme Weather</h2>
+            <p>There are several strategies to mitigate and adapt to extreme weather events:</p>
+            <ul>
+                <li><strong>Reduce Greenhouse Gas Emissions:</strong> Reducing carbon emissions is crucial for slowing the pace of climate change and, in turn, reducing the frequency of extreme weather events. Transitioning to renewable energy sources, improving energy efficiency, and adopting sustainable practices are key steps.</li>
+                <li><strong>Strengthen Disaster Preparedness:</strong> Governments need to improve early warning systems, evacuation plans, and disaster response strategies to minimize the human and economic toll of extreme weather events.</li>
+                <li><strong>Invest in Climate Resilience:</strong> Communities can build climate-resilient infrastructure, such as flood barriers, storm-resistant buildings, and drought-resistant crops to withstand extreme weather events.</li>
+                <li><strong>Restore Natural Ecosystems:</strong> Coastal ecosystems, like mangroves and coral reefs, help buffer against storms and flooding. Restoring these ecosystems can reduce the impact of extreme weather events on coastal communities.</li>
+                <li><strong>Urban Planning and Zoning:</strong> Cities should implement zoning laws that avoid construction in flood-prone areas and encourage the use of natural drainage solutions to manage stormwater.</li>
+            </ul>
+        </section>
+
+       
+    <!-- Chart.js Script to Render Extreme Weather Graph -->
+    <script>
+        const weatherCtx = document.getElementById('weatherChart').getContext('2d');
+        const weatherChart = new Chart(weatherCtx, {
+            type: 'bar',
+            data: {
+                labels: ['1990', '1995', '2000', '2005', '2010', '2015', '2020'],
+                datasets: [{
+                    label: 'Number of Extreme Weather Events',
+                    data: [30, 35, 40, 50, 65, 75, 90], // Example data
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 2,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+
+<!-- Extreme Weather Solutions Tool Section -->
+<section id="weather-solutions">
+    <h2>Explore Solutions to Extreme Weather Events</h2>
+    <p>Click on a solution to learn more:</p>
+
+    <!-- Solutions List -->
+    <div class="solutions-list">
+        <button class="solution-btn" onclick="showSolution('emissions')">Reduce Greenhouse Gas Emissions</button>
+        <button class="solution-btn" onclick="showSolution('preparedness')">Strengthen Disaster Preparedness</button>
+        <button class="solution-btn" onclick="showSolution('resilience')">Invest in Climate Resilience</button>
+        <button class="solution-btn" onclick="showSolution('ecosystems')">Restore Natural Ecosystems</button>
+        <button class="solution-btn" onclick="showSolution('urban')">Urban Planning and Zoning</button>
+    </div>
+
+    <!-- Solution Details Section -->
+    <div class="solution-details" id="solutionDetails">
+        <h3 id="solutionTitle">Select a Solution</h3>
+        <p id="solutionDescription">Click on one of the solutions above to see more details.</p>
+    </div>
+</section>
+<script>
+    // Function to display details for each solution
+    function showSolution(solution) {
+        const solutions = {
+            emissions: {
+                title: 'Reduce Greenhouse Gas Emissions',
+                description: 'Reducing carbon emissions is crucial for slowing climate change. Transitioning to renewable energy sources, improving energy efficiency, and adopting sustainable practices are key steps to reduce the frequency of extreme weather events.'
+            },
+            preparedness: {
+                title: 'Strengthen Disaster Preparedness',
+                description: 'Governments need to improve early warning systems, evacuation plans, and disaster response strategies to minimize the human and economic toll of extreme weather events. Disaster preparedness saves lives and reduces damage.'
+            },
+            resilience: {
+                title: 'Invest in Climate Resilience',
+                description: 'Communities can build climate-resilient infrastructure, such as flood barriers, storm-resistant buildings, and drought-resistant crops, to withstand extreme weather events and protect vulnerable populations.'
+            },
+            ecosystems: {
+                title: 'Restore Natural Ecosystems',
+                description: 'Restoring coastal ecosystems like mangroves and coral reefs can buffer against storms and flooding. Natural ecosystems play a critical role in reducing the impact of extreme weather on coastal communities.'
+            },
+            urban: {
+                title: 'Urban Planning and Zoning',
+                description: 'Urban planning should implement zoning laws that avoid construction in flood-prone areas and encourage the use of natural drainage solutions to manage stormwater. Sustainable urban design can mitigate extreme weather impacts.'
+            }
+        };
+
+        // Update the solution details in the DOM
+        const selectedSolution = solutions[solution];
+        document.getElementById('solutionTitle').innerText = selectedSolution.title;
+        document.getElementById('solutionDescription').innerText = selectedSolution.description;
+    }
+</script>
